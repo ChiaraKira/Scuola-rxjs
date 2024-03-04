@@ -1,1 +1,4 @@
-<p>list works!</p>
+<ul *ngFor="let a of aule" (click)="onClickDettaglio(a)">
+    <div>Classe: {{a.classe}}° {{a.sezione}}</div>
+    <button (click)="removeAula(a.classe, a.sezione)">X</button>
+</ul>

@@ -1,7 +1,7 @@
-export interface Aula{
-    classe:number;
-    sezione:string;
-    isLaboratorio:boolean;
+export interface Aula {
+    classe: number;
+    sezione: string;
+    isLaboratorio: boolean;
     rappresentante: string;
-    mascotteImg:string;
+    mascotteImg: string;
 }

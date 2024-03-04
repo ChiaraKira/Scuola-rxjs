@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Aula } from '../model/aula';
+import { AulaService } from '../service/aula.service';
 
 @Component({
   selector: 'app-list',
@@ -6,5 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
+  aule: Aula[];
 
+  constructor(private aulaService: AulaService) {
+    this.aule = this.aulaService.getAule();
+
+    this.aulaService.auleChanged.subscribe((updatedAule) => this.aule = updatedAule)
+  }
+
+  onClickDettaglio(aula: Aula) {
+    this.aulaService.selectDettaglio(aula);
+  }
+
+  removeAula(classe: number, sezione: string) {
+    this.aulaService.deleteAula(classe, sezione);
+  }
 }
