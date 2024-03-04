@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Aula } from '../model/aula';
+import { AulaService } from '../service/aula.service';
 
 @Component({
   selector: 'app-dettaglio',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class DettaglioComponent {
 
+  aulaDettaglio?:Aula;
+
+  constructor(private aulaService:AulaService){
+    this.aulaService.aulaSelectedChanged.subscribe((selected) => this.aulaDettaglio = selected);
+  }
 }

@@ -1,1 +1,11 @@
-<p>dettaglio works!</p>
+<ul *ngIf="aulaDettaglio else noDettaglio">Aula: {{aulaDettaglio.classe}} {{aulaDettaglio.sezione}}
+    <div>
+        Mascotte: <img [src]="aulaDettaglio.mascotteImg" alt="Immagine Mascotte" width="200px">
+    </div>
+    <li>Laboratorio: {{aulaDettaglio.isLaboratorio ? 'Presente' : 'Nessuno'}}</li>
+    <li>Rappresentante: {{aulaDettaglio.rappresentante}}</li>
+</ul>
+
+<ng-template #noDettaglio>
+    <p>Nessuna Aula selezionata</p>
+</ng-template>
