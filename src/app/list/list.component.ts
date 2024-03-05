@@ -13,7 +13,9 @@ export class ListComponent {
   constructor(private aulaService: AulaService) {
     this.aule = this.aulaService.getAule();
 
-    this.aulaService.auleChanged.subscribe((updatedAule) => this.aule = updatedAule)
+    this.aulaService.auleChanged.subscribe((updateAule) => {
+      this.aule = updateAule;
+    })
   }
 
   onClickDettaglio(aula: Aula) {
@@ -22,5 +24,6 @@ export class ListComponent {
 
   removeAula(classe: number, sezione: string) {
     this.aulaService.deleteAula(classe, sezione);
+
   }
 }

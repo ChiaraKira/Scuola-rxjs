@@ -13,4 +13,9 @@ export class DettaglioComponent {
   constructor(private aulaService: AulaService) {
     this.aulaService.aulaSelectedChanged.subscribe((selected) => this.aulaDettaglio = selected);
   }
+  aulaDettaglio?: Aula;
+
+  constructor(private aulaService: AulaService) {
+    this.aulaService.aulaSelectedChanged.subscribe((selected) => this.aulaDettaglio = selected);
+  }
 }

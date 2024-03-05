@@ -1,7 +1,8 @@
 <div class="form">
+
     <div class="form-group">
-        <label for="classe">Classe: </label>
-        <select type="number" id="classe" [(ngModel)]="classe">
+        <label for="classe">Classe:</label>
+        <select id="classe" [(ngModel)]="classe">
             <option value="1">Prima</option>
             <option value="2">Seconda</option>
             <option value="3">Terza</option>
@@ -11,27 +12,27 @@
     </div>
 
     <div class="form-group">
-        <label for="sezione">Sezione: </label>
-        <input type="text" id="sezione" placeholder="Inserisci la sezione" [(ngModel)]="sezione">
+        <label for="sezione">Sezione:</label>
+        <input type="text" placeholder="inserisci sezione" id="sezione" [(ngModel)]="sezione">
+    </div>
+    <div class="form-group">
+        <input type="checkbox" id="laboratorio" [(ngModel)]="isLaboratorio">
+        <label for="laboratorio">Laboratorio</label>
     </div>
 
-    <div class="formGroup">
-        <label for="lab">Laboratorio: </label>
-        <input type="checkbox" id="lab" [(ngModel)]="isLaboratorio">
-    </div>
-
-    <div class="formGroup">
-        <label for="rappresentante">Rappresentante: </label>
+    <div class="form-group">
+        <label for="rappresentante">Nome Rappresentante:</label>
         <input type="text" id="rappresentante" placeholder="Pino" [(ngModel)]="rappresentante">
     </div>
 
-    <div class="formGroup">
-        <label for="mascotte">Link Mascotte: </label>
-        <input type="url" id="mascotte" placeholder="https://sitobel.lo/mascotte.jpg" [(ngModel)]="mascotteImg">
+
+    <div class="form-group">
+        <label for="mascotteImg">Mascotte:</label>
+        <input type="url" id="mascotteImg" placeholder="https://imgMascotte.com/lol.jpg" [(ngModel)]="mascotteImg">
     </div>
 
-    <div class="formGroup">
+    <div class="button">
+        <button (click)="aggiungiAula()">Aggiungi</button>
         <button (click)="reset()">Reset</button>
-        <button (click)="newAula()">Aggiungi</button>
     </div>
 </div>

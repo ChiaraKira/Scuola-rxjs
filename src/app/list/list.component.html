@@ -1,4 +1,4 @@
 <ul *ngFor="let a of aule" (click)="onClickDettaglio(a)">
-    <div>Classe: {{a.classe}}° {{a.sezione}}</div>
-    <button (click)="removeAula(a.classe, a.sezione)">X</button>
+    <li>Classe: {{a.classe}} {{a.sezione}}</li>
+    <button (click)="removeAula(a.classe,a.sezione)">X</button>
 </ul>

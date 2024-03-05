@@ -1,14 +1,11 @@
-<ul *ngIf="aulaDettaglio; else noDettaglio">
-
-    <img [src]="aulaDettaglio.mascotteImg" alt="Immagine mascotte" width="200px">
-    <li>{{aulaDettaglio.classe}}</li>
-    <li>Laboratorio: {{aulaDettaglio.isLaboratorio? 'Si': 'Nessun laboratorio'}}</li>
-    <li>Nome rappresentante: {{aulaDettaglio.rappresentante}}</li>
-    <li></li>
+<ul *ngIf="aulaDettaglio else noDettaglio">Aula: {{aulaDettaglio.classe}} {{aulaDettaglio.sezione}}
+    <div>
+        Mascotte: <img [src]="aulaDettaglio.mascotteImg" alt="Immagine Mascotte" width="200px">
+    </div>
+    <li>Laboratorio: {{aulaDettaglio.isLaboratorio ? 'Presente' : 'Nessuno'}}</li>
+    <li>Rappresentante: {{aulaDettaglio.rappresentante}}</li>
 </ul>
 
 <ng-template #noDettaglio>
-    <p>
-        Nessuna Aula selezionata
-    </p>
+    <p>Nessuna Aula selezionata</p>
 </ng-template>
