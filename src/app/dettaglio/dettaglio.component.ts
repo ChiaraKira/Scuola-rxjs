@@ -8,10 +8,9 @@ import { AulaService } from '../service/aula.service';
   styleUrls: ['./dettaglio.component.css']
 })
 export class DettaglioComponent {
+  aulaDettaglio?: Aula;
 
-  aulaDettaglio?:Aula;
-
-  constructor(private aulaService:AulaService){
+  constructor(private aulaService: AulaService) {
     this.aulaService.aulaSelectedChanged.subscribe((selected) => this.aulaDettaglio = selected);
   }
 }

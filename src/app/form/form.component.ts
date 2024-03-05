@@ -7,26 +7,30 @@ import { AulaService } from '../service/aula.service';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent {
-  classe:number = 1;
-  sezione:string = '';
-  isLaboratorio:boolean = false;
-  rappresentante:string = '';
-  mascotteImg:string = '';
+  classe: number = 1;
+  sezione: string = '';
+  isLaboratorio: boolean = false;
+  rappresentante: string = '';
+  mascotteImg: string = '';
 
-constructor(private aulaService : AulaService){}
+  constructor(private aulaService: AulaService) { }
 
-  aggiungiAula(){
-    this.aulaService.addAula(Number(this.classe), this.sezione.toUpperCase(), this.isLaboratorio, this.rappresentante, this.mascotteImg);
+  aggiungiAula() {
+    this.aulaService.addAula(
+      this.classe,
+      this.sezione.toUpperCase(),
+      this.isLaboratorio,
+      this.rappresentante,
+      this.mascotteImg
+    );
     this.reset();
   }
 
-  reset(){
+  reset() {
     this.classe = 1;
     this.sezione = '';
     this.isLaboratorio = false;
     this.rappresentante = '';
     this.mascotteImg = '';
-
   }
-
 }
